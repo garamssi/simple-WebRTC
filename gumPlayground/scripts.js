@@ -1,6 +1,8 @@
 const videoEl = document.querySelector('#my-video');
 
 let stream = null; // init stream, 그리고 어디서든 사용 가능
+let mediaStream = null //init mediaStream, 화면공유를 위한 변수
+
 const constraints = {
   audio : true, // 헤드폰, 스피커
   video: true, // 카메라
@@ -105,3 +107,9 @@ document.querySelector('#play-record').addEventListener('click',e=>playRecording
 
 // 화면 공유
 document.querySelector('#share-screen').addEventListener('click',e=>shareScreen(e));
+
+
+// 오디오 비디오 인풋
+document.querySelector('#audio-input').addEventListener('change', e=>changeAudioInput(e));
+document.querySelector('#audio-output').addEventListener('change', e=>changeAudioOutput(e));
+document.querySelector('#video-input').addEventListener('change', e=>changeVideo(e));
